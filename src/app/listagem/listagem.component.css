@@ -1,0 +1,70 @@
+.page-title {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .container{
+    width: 70%;
+    margin: 0 auto;
+  }
+
+  .add-button {
+    display: block;
+    margin-right: 0 ;
+    margin-left: auto;
+    padding: 10px 20px;
+    background-color: #03ad20c9;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .add-button:hover {
+    background-color: #affc9f;
+  }
+
+  .pessoa-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .pessoa-table th,
+  .pessoa-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+
+  .pessoa-table td:last-child {
+    text-align: center;
+}
+  
+  .pessoa-table th {
+    background-color: #a8a6a6;
+    text-align: left;
+  }
+  
+  .pessoa-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  .pessoa-table tr:hover {
+    background-color: #f1f1f1;
+  }
+  
+  .view-button {
+    margin: 0 auto;
+    background-color: #e4e003;
+    color: rgb(12, 12, 12);
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  .view-button:hover {
+    background-color: #efff5f;
+  }

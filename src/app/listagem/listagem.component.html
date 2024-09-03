@@ -1,0 +1,25 @@
+<h2 class="page-title">PESSOAS CADASTRADAS</h2>
+<div class="container">
+    <button (click)="navegarParaAdicionar()" class="add-button">Novo Cadastro</button>
+
+    <table class="pessoa-table">
+    <thead>
+    <tr>
+        <th>Nome</th>
+        <th>Data de Nascimento</th>
+        <th>Telefone</th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let pessoa of pessoas">
+        <td>{{ pessoa.nome }}</td>
+        <td>{{ pessoa.dataDeNascimento }}</td>
+        <td>{{ pessoa.telefone }}</td>
+        <td>
+        <button (click)="visualizarPessoa(pessoa.id)" class="view-button">Detalhes</button>
+        </td>
+    </tr>
+    </tbody>
+    </table>
+</div>

@@ -1,0 +1,41 @@
+<h1 class="form-title">Cadastrar Pessoa</h1>
+<form (ngSubmit)="cadastrarPessoa()">
+  <div class="form-group">
+    <label for="nome">Nome:</label>
+
+    <input
+      type="text"
+      id="nome"
+      [(ngModel)]="pessoa.nome"
+      name="nome"
+      required
+      placeholder="Digite o nome completo."
+    />
+
+    <label for="nome">Telefone:</label>
+
+    <input
+      type="text"
+      id="telefone"
+      [(ngModel)]="pessoa.telefone"
+      name="telefone"
+      required
+      placeholder="(xx)xxxx-xxxx."
+    />
+
+    <label for="dataDeNascimento">Data de Nascimento:</label>
+
+    <div class="flex-container">
+      <input
+        type="text"
+        id="dataDeNascimento"
+        [(ngModel)]="pessoa.dataDeNascimento"
+        name="dataDeNascimento"
+        required
+        placeholder="dd/mm/aaaa"
+      />
+
+      <button type="submit">Cadastrar</button>
+    </div>
+  </div>
+</form>
