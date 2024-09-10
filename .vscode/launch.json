@@ -3,6 +3,13 @@
   "version": "0.2.0",
   "configurations": [
     {
+      "type": "java",
+      "name": "FormApiApplication",
+      "request": "launch",
+      "mainClass": "com.kaz.formApi.FormApiApplication",
+      "projectName": "formApi"
+    },
+    {
       "name": "ng serve",
       "type": "chrome",
       "request": "launch",

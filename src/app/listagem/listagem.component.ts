@@ -21,7 +21,16 @@ export class ListagemComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.pessoas = this.pessoaService.getPessoas();
+    
+    this.pessoaService.getPessoas().subscribe({
+      next: (data: Pessoa[]) => {
+        this.pessoas = data;
+      },
+      error: (err) => {
+        console.error('Erro ao buscar pessoas: ', err);
+        alert('Ocorreu um erro ao carregar a lista de pessoas.');
+      }
+    })
   }
 
   navegarParaAdicionar(): void {

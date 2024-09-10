@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Pessoa, PessoaService} from "../services/pessoa.service";
 import {Router} from "@angular/router";
+import { HttpClientModule } from '@angular/common/http';
 import {ActivatedRoute} from "@angular/router";
 import {NgIf} from "@angular/common";
 
@@ -8,6 +9,7 @@ import {NgIf} from "@angular/common";
   selector: 'app-visualizacao',
   standalone: true,
   imports: [
+    HttpClientModule,
     NgIf
   ],
   templateUrl: './visualizacao.component.html',
@@ -25,7 +27,14 @@ export class TelaComponent implements OnInit {
   ngOnInit(): void {
     this.route.paramMap.subscribe(params => {
       const id = +params.get('id')!;
-      this.pessoa = this.pessoaService.getPessoaById(id);
+      this.pessoaService.getPessoaById(id).subscribe({
+        next: (data: Pessoa) => {
+          this.pessoa = data;
+        },
+        error: (err) => {
+          console.error('Erro ao buscar pessoa:', err);
+        }
+      });
     });
   }
 

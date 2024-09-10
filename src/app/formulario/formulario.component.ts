@@ -25,8 +25,15 @@ export class FormularioComponent {
       alert('Preencha todos os campos.');
       return;
     }
-    this.pessoa.id = this.pessoaService.getPessoas().length ? Math.max(...this.pessoaService.getPessoas().map(p => p.id)) + 1 : 1;
-    this.pessoaService.addPessoa(this.pessoa);
-    this.router.navigate(['/listagem']);
+    this.pessoaService.addPessoa(this.pessoa).subscribe({
+      next: (response) => {
+        alert('Pessoa cadastrada com sucesso!');
+        this.router.navigate(['/listagem']);
+      },
+      error: (err) => {
+        console.error('Erro ao cadastrar pessoa: ', err);
+        alert('Ocorreu um erro ao cadastrar a pessoa.');
+      }
+    })
   }
 }
